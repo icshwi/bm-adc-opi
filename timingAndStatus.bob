@@ -14,7 +14,7 @@
     <name>Status Group</name>
     <macros>
       <EVR>EVR-01</EVR>
-      <PREFIX>ESSIP-DET:TS-</PREFIX>
+      <PREFIX>BM-ADC-</PREFIX>
     </macros>
     <x>50</x>
     <y>30</y>
@@ -23,7 +23,7 @@
     <style>2</style>
     <widget type="label" version="2.0.0">
       <name>NetworkTitle</name>
-      <text>Status and Timing $(PREFIX)</text>
+      <text>Status and Control $(PREFIX)</text>
       <x>30</x>
       <y>9</y>
       <width>364</width>
@@ -39,619 +39,9 @@
       </macros>
       <tabs>
         <tab>
-          <name>Timing</name>
-          <children>
-            <widget type="group" version="2.0.0">
-              <name>$(EVR)</name>
-              <macros>
-                <RO1FP>12</RO1FP>
-                <RO2FP>10</RO2FP>
-              </macros>
-              <x>17</x>
-              <y>19</y>
-              <width>310</width>
-              <height>703</height>
-              <widget type="label" version="2.0.0">
-                <name>Label_30</name>
-                <text>Evt16 Sent Sec</text>
-                <x>9</x>
-                <y>19</y>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_18</name>
-                <pv_name>ca://$(PREFIX)$(EVR):CheckSec-RBV</pv_name>
-                <x>129</x>
-                <y>19</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_19</name>
-                <pv_name>ca://$(PREFIX)$(EVR):CheckNsec-RBV</pv_name>
-                <x>129</x>
-                <y>49</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_31</name>
-                <text>Evt16 Sent Tick</text>
-                <x>9</x>
-                <y>49</y>
-                <width>130</width>
-                <height>50</height>
-              </widget>
-              <widget type="bool_button" version="2.0.0">
-                <name>Boolean Button_5</name>
-                <pv_name>$(PREFIX)$(EVR):detSyncState-SP</pv_name>
-                <x>79</x>
-                <y>199</y>
-                <width>110</width>
-                <height>50</height>
-                <off_label>Check Sync</off_label>
-                <off_color>
-                  <color red="80" green="255" blue="255">
-                  </color>
-                </off_color>
-                <on_label>Init Sync</on_label>
-                <on_color>
-                  <color red="255" green="255" blue="26">
-                  </color>
-                </on_color>
-                <show_led>false</show_led>
-                <actions>
-                  <action type="write_pv">
-                    <pv_name>ca://$(PREFIX)$(EVR):detSyncState-SP</pv_name>
-                    <value>1</value>
-                    <description>Write PV</description>
-                  </action>
-                </actions>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_20</name>
-                <pv_name>ca://$(PREFIX)$(EVR):detSyncState-RBV</pv_name>
-                <x>129</x>
-                <y>259</y>
-                <width>95</width>
-                <height>30</height>
-                <format>6</format>
-              </widget>
-              <widget type="textentry" version="3.0.0">
-                <name>IPSet</name>
-                <pv_name>ca://$(PREFIX)$(EVR):FracNsecDelta-SP</pv_name>
-                <x>128</x>
-                <y>105</y>
-                <width>115</width>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_33</name>
-                <text>TicksDelta</text>
-                <x>9</x>
-                <y>105</y>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_32</name>
-                <text>EVR Time Valid</text>
-                <x>9</x>
-                <y>169</y>
-                <width>190</width>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_21</name>
-                <pv_name>ca://$(PREFIX)$(EVR):Time-Valid-Sts</pv_name>
-                <x>129</x>
-                <y>169</y>
-                <width>85</width>
-                <format>6</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_34</name>
-                <text>Detector Time Sync State</text>
-                <x>9</x>
-                <y>249</y>
-                <height>49</height>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>LED_3</name>
-                <pv_name>$(PREFIX)$(EVR):Time-Valid-Sts</pv_name>
-                <x>224</x>
-                <y>170</y>
-                <height>19</height>
-                <off_color>
-                  <color red="255" green="0" blue="0">
-                  </color>
-                </off_color>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_53</name>
-                <text>RO1 Clock</text>
-                <x>9</x>
-                <y>309</y>
-              </widget>
-              <widget type="bool_button" version="2.0.0">
-                <name>Boolean Button_8</name>
-                <pv_name>$(PREFIX)$(EVR):OutFPUV$(RO1FP)-Ena-SP</pv_name>
-                <x>124</x>
-                <y>299</y>
-                <actions>
-                  <action type="write_pv">
-                    <pv_name>ca://$(PREFIX)$(EVR):OutFPUV$(RO1FP)-Ena-SP</pv_name>
-                    <value>1</value>
-                    <description>Write PV</description>
-                  </action>
-                </actions>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_56</name>
-                <text>RO2 Clock</text>
-                <x>9</x>
-                <y>352</y>
-              </widget>
-              <widget type="bool_button" version="2.0.0">
-                <name>Boolean Button_10</name>
-                <pv_name>$(PREFIX)$(EVR):OutFPUV$(RO2FP)-Ena-SP</pv_name>
-                <x>124</x>
-                <y>352</y>
-                <actions>
-                  <action type="write_pv">
-                    <pv_name>ca://$(PREFIX)$(EVR):OutFPUV$(RO2FP)-Ena-SP</pv_name>
-                    <value>1</value>
-                    <description>Write PV</description>
-                  </action>
-                </actions>
-              </widget>
-            </widget>
-            <widget type="group" version="2.0.0">
-              <name>$(DEV)</name>
-              <macros>
-                <DEV>RO2</DEV>
-              </macros>
-              <x>378</x>
-              <y>372</y>
-              <width>330</width>
-              <height>350</height>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_44</name>
-                <pv_name>ca://$(PREFIX)$(DEV):STATUS2-RBV</pv_name>
-                <x>109</x>
-                <y>9</y>
-                <width>115</width>
-                <format>4</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_63</name>
-                <text>STATUS2</text>
-                <x>9</x>
-                <y>9</y>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_64</name>
-                <text>Seconds</text>
-                <x>9</x>
-                <y>39</y>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_45</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TSU-RBV</pv_name>
-                <x>109</x>
-                <y>39</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_46</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TSL-RBV</pv_name>
-                <x>109</x>
-                <y>69</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_65</name>
-                <text>Ticks</text>
-                <x>9</x>
-                <y>69</y>
-              </widget>
-              <widget type="bool_button" version="2.0.0">
-                <name>Boolean Button_12</name>
-                <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-                <x>9</x>
-                <y>110</y>
-                <off_label>Reset</off_label>
-                <off_color>
-                  <color red="255" green="60" blue="60">
-                  </color>
-                </off_color>
-                <on_label>Enable</on_label>
-                <show_led>false</show_led>
-                <actions>
-                  <action type="write_pv">
-                    <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-                    <value>1</value>
-                    <description>Write PV</description>
-                  </action>
-                </actions>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>LED_8</name>
-                <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
-                <x>159</x>
-                <y>110</y>
-                <width>30</width>
-                <height>30</height>
-                <off_color>
-                  <color red="60" green="255" blue="60">
-                  </color>
-                </off_color>
-                <on_color>
-                  <color red="255" green="60" blue="60">
-                  </color>
-                </on_color>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_47</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
-                <x>108</x>
-                <y>219</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_66</name>
-                <text>Seconds Diff</text>
-                <x>9</x>
-                <y>219</y>
-                <width>119</width>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_67</name>
-                <text>Frac Diff</text>
-                <x>9</x>
-                <y>249</y>
-                <width>119</width>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_48</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-NDiff-RBV</pv_name>
-                <x>108</x>
-                <y>249</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="radio" version="2.0.0">
-                <name>ClockSource_9</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
-                <x>109</x>
-                <y>149</y>
-                <height>47</height>
-                <items>
-                  <item>Internal</item>
-                  <item>External</item>
-                </items>
-                <items_from_pv>false</items_from_pv>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>InternalClock_8</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-RBV</pv_name>
-                <x>219</x>
-                <y>149</y>
-                <off_color>
-                  <color name="LED-GREEN-ON" red="70" green="255" blue="70">
-                  </color>
-                </off_color>
-                <on_color>
-                  <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
-                  </color>
-                </on_color>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>ExternalClock_8</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-RBV</pv_name>
-                <x>219</x>
-                <y>176</y>
-              </widget>
-              <widget type="array" version="2.0.0">
-                <name>Array_3</name>
-                <x>139</x>
-                <y>239</y>
-                <width>1</width>
-                <height>1</height>
-              </widget>
-              <widget type="multi_state_led" version="2.0.0">
-                <name>LED (Multi State)_1</name>
-                <x>59</x>
-                <y>269</y>
-                <width>1</width>
-                <height>1</height>
-                <states>
-                  <state>
-                    <value>0</value>
-                    <label>State 1</label>
-                    <color>
-                      <color name="Off" red="60" green="100" blue="60">
-                      </color>
-                    </color>
-                  </state>
-                  <state>
-                    <value>1</value>
-                    <label>State 2</label>
-                    <color>
-                      <color name="On" red="0" green="255" blue="0">
-                      </color>
-                    </color>
-                  </state>
-                </states>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_68</name>
-                <text>Clk Src</text>
-                <x>9</x>
-                <y>159</y>
-                <width>119</width>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_76</name>
-                <text>Total Diff</text>
-                <x>10</x>
-                <y>279</y>
-                <width>119</width>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_55</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-Diff-RBV</pv_name>
-                <x>108</x>
-                <y>279</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-            </widget>
-            <widget type="group" version="2.0.0">
-              <name>$(DEV)</name>
-              <macros>
-                <DEV>RO1</DEV>
-              </macros>
-              <x>377</x>
-              <y>22</y>
-              <width>330</width>
-              <height>350</height>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_49</name>
-                <pv_name>ca://$(PREFIX)$(DEV):STATUS2-RBV</pv_name>
-                <x>109</x>
-                <y>9</y>
-                <width>115</width>
-                <format>4</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_69</name>
-                <text>STATUS2</text>
-                <x>9</x>
-                <y>9</y>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_70</name>
-                <text>Seconds</text>
-                <x>9</x>
-                <y>39</y>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_50</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TSU-RBV</pv_name>
-                <x>109</x>
-                <y>39</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_51</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TSL-RBV</pv_name>
-                <x>109</x>
-                <y>69</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_71</name>
-                <text>Ticks</text>
-                <x>9</x>
-                <y>69</y>
-              </widget>
-              <widget type="bool_button" version="2.0.0">
-                <name>Boolean Button_13</name>
-                <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-                <x>9</x>
-                <y>110</y>
-                <off_label>Reset</off_label>
-                <off_color>
-                  <color red="255" green="60" blue="60">
-                  </color>
-                </off_color>
-                <on_label>Enable</on_label>
-                <show_led>false</show_led>
-                <actions>
-                  <action type="write_pv">
-                    <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-                    <value>1</value>
-                    <description>Write PV</description>
-                  </action>
-                </actions>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>LED_9</name>
-                <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
-                <x>159</x>
-                <y>110</y>
-                <width>30</width>
-                <height>30</height>
-                <off_color>
-                  <color red="60" green="255" blue="60">
-                  </color>
-                </off_color>
-                <on_color>
-                  <color red="255" green="60" blue="60">
-                  </color>
-                </on_color>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_52</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
-                <x>108</x>
-                <y>219</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_72</name>
-                <text>Seconds Diff</text>
-                <x>9</x>
-                <y>219</y>
-                <width>119</width>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_73</name>
-                <text>Frac Diff</text>
-                <x>9</x>
-                <y>249</y>
-                <width>119</width>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_53</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-NDiff-RBV</pv_name>
-                <x>108</x>
-                <y>249</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="radio" version="2.0.0">
-                <name>ClockSource_10</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
-                <x>109</x>
-                <y>149</y>
-                <height>47</height>
-                <items>
-                  <item>Internal</item>
-                  <item>External</item>
-                </items>
-                <items_from_pv>false</items_from_pv>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>InternalClock_9</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-RBV</pv_name>
-                <x>219</x>
-                <y>149</y>
-                <off_color>
-                  <color name="LED-GREEN-ON" red="70" green="255" blue="70">
-                  </color>
-                </off_color>
-                <on_color>
-                  <color name="LED-GREEN-OFF" red="90" green="110" blue="90">
-                  </color>
-                </on_color>
-              </widget>
-              <widget type="led" version="2.0.0">
-                <name>ExternalClock_9</name>
-                <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-RBV</pv_name>
-                <x>219</x>
-                <y>176</y>
-              </widget>
-              <widget type="array" version="2.0.0">
-                <name>Array_4</name>
-                <x>139</x>
-                <y>239</y>
-                <width>1</width>
-                <height>1</height>
-              </widget>
-              <widget type="multi_state_led" version="2.0.0">
-                <name>LED (Multi State)_2</name>
-                <x>59</x>
-                <y>269</y>
-                <width>1</width>
-                <height>1</height>
-                <states>
-                  <state>
-                    <value>0</value>
-                    <label>State 1</label>
-                    <color>
-                      <color name="Off" red="60" green="100" blue="60">
-                      </color>
-                    </color>
-                  </state>
-                  <state>
-                    <value>1</value>
-                    <label>State 2</label>
-                    <color>
-                      <color name="On" red="0" green="255" blue="0">
-                      </color>
-                    </color>
-                  </state>
-                </states>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_74</name>
-                <text>Clk Src</text>
-                <x>9</x>
-                <y>159</y>
-                <width>119</width>
-              </widget>
-              <widget type="textupdate" version="2.0.0">
-                <name>IPGet_54</name>
-                <pv_name>ca://$(PREFIX)$(DEV):TS-Diff-RBV</pv_name>
-                <x>109</x>
-                <y>280</y>
-                <width>115</width>
-                <format>1</format>
-              </widget>
-              <widget type="label" version="2.0.0">
-                <name>Label_75</name>
-                <text>Total Diff</text>
-                <x>9</x>
-                <y>279</y>
-                <width>119</width>
-              </widget>
-            </widget>
-            <widget type="polyline" version="2.0.0">
-              <name>Polyline_1</name>
-              <x>273</x>
-              <y>322</y>
-              <width>114</width>
-              <height>30</height>
-              <line_color>
-                <color name="BLACK" red="0" green="0" blue="0">
-                </color>
-              </line_color>
-              <arrows>2</arrows>
-              <points>
-                <point x="0.0" y="30.268560888933052">
-                </point>
-                <point x="114.28574828433051" y="0.0">
-                </point>
-              </points>
-            </widget>
-            <widget type="polyline" version="2.0.0">
-              <name>Polyline_2</name>
-              <x>278</x>
-              <y>407</y>
-              <width>104</width>
-              <height>202</height>
-              <line_color>
-                <color name="BLACK" red="0" green="0" blue="0">
-                </color>
-              </line_color>
-              <arrows>2</arrows>
-              <points>
-                <point x="0.0" y="0.0">
-                </point>
-                <point x="104.19233828818102" y="202.3387349843332">
-                </point>
-              </points>
-            </widget>
-          </children>
-        </tab>
-        <tab>
           <name>R01</name>
           <children>
             <widget type="tabs" version="2.0.0">
-              <name>Detector Readout Controls_6</name>
               <macros>
                 <DEV>RO1</DEV>
               </macros>
@@ -2276,7 +1666,7 @@ widget.setValue(data)]]></text>
           <name>R02</name>
           <children>
             <widget type="tabs" version="2.0.0">
-              <name>Detector Readout Controls_7</name>
+              <name>Detector Readout Controls_6</name>
               <macros>
                 <DEV>RO2</DEV>
               </macros>
@@ -2973,14 +2363,8 @@ widget.setValue(data)]]></text>
                               <name>Action Button_3</name>
                               <actions>
                                 <action type="open_display">
-                                  <file>../dmsc_detector_interfaceApp/op/bob/offsetCalibrations.bob</file>
-                                  <macros>
-                                    <CH>1</CH>
-                                    <DEV>${DEV}</DEV>
-                                    <PREFIX>${PREFIX}</PREFIX>
-                                    <SYS>${SYS}</SYS>
-                                  </macros>
-                                  <target>standalone</target>
+                                  <file>offsetCalibrations.bob</file>
+                                  <target>window</target>
                                   <description>Open Display</description>
                                 </action>
                               </actions>
@@ -2995,14 +2379,8 @@ widget.setValue(data)]]></text>
                               <name>Action Button_7</name>
                               <actions>
                                 <action type="open_display">
-                                  <file>../dmsc_detector_interfaceApp/op/bob/offsetCalibrations.bob</file>
-                                  <macros>
-                                    <CH>2</CH>
-                                    <DEV>${DEV}</DEV>
-                                    <PREFIX>${PREFIX}</PREFIX>
-                                    <SYS>${SYS}</SYS>
-                                  </macros>
-                                  <target>standalone</target>
+                                  <file>offsetCalibrations.bob</file>
+                                  <target>window</target>
                                   <description>Open Display</description>
                                 </action>
                               </actions>
@@ -3017,14 +2395,8 @@ widget.setValue(data)]]></text>
                               <name>Action Button_8</name>
                               <actions>
                                 <action type="open_display">
-                                  <file>../dmsc_detector_interfaceApp/op/bob/offsetCalibrations.bob</file>
-                                  <macros>
-                                    <CH>3</CH>
-                                    <DEV>${DEV}</DEV>
-                                    <PREFIX>${PREFIX}</PREFIX>
-                                    <SYS>${SYS}</SYS>
-                                  </macros>
-                                  <target>standalone</target>
+                                  <file>offsetCalibrations.bob</file>
+                                  <target>window</target>
                                   <description>Open Display</description>
                                 </action>
                               </actions>
@@ -3039,14 +2411,8 @@ widget.setValue(data)]]></text>
                               <name>Action Button_9</name>
                               <actions>
                                 <action type="open_display">
-                                  <file>../dmsc_detector_interfaceApp/op/bob/offsetCalibrations.bob</file>
-                                  <macros>
-                                    <CH>4</CH>
-                                    <DEV>${DEV}</DEV>
-                                    <PREFIX>${PREFIX}</PREFIX>
-                                    <SYS>${SYS}</SYS>
-                                  </macros>
-                                  <target>standalone</target>
+                                  <file>offsetCalibrations.bob</file>
+                                  <target>window</target>
                                   <description>Open Display</description>
                                 </action>
                               </actions>
@@ -3061,14 +2427,8 @@ widget.setValue(data)]]></text>
                               <name>Action Button_4</name>
                               <actions>
                                 <action type="open_display">
-                                  <file>../dmsc_detector_interfaceApp/op/bob/SPIdebug.bob</file>
-                                  <macros>
-                                    <CH>1</CH>
-                                    <DEV>${DEV}</DEV>
-                                    <PREFIX>${PREFIX}</PREFIX>
-                                    <SYS>${SYS}</SYS>
-                                  </macros>
-                                  <target>standalone</target>
+                                  <file>SPIdebug.bob</file>
+                                  <target>window</target>
                                   <description>Open Display</description>
                                 </action>
                               </actions>
@@ -3188,33 +2548,33 @@ widget.setValue(data)]]></text>
                               </widget>
                             </widget>
                             <widget type="group" version="2.0.0">
-                              <name>Group_3</name>
-                              <x>137</x>
-                              <y>159</y>
+                              <name>Group_5</name>
+                              <x>138</x>
+                              <y>165</y>
                               <width>460</width>
                               <height>230</height>
                               <style>3</style>
                               <transparent>true</transparent>
                               <widget type="label" version="2.0.0">
-                                <name>ThresholdLabel_37</name>
+                                <name>ThresholdLabel_47</name>
                                 <text>Test Pattern Width</text>
                                 <x>70</x>
                                 <width>140</width>
                               </widget>
                               <widget type="label" version="2.0.0">
-                                <name>ThresholdLabel_38</name>
+                                <name>ThresholdLabel_48</name>
                                 <text>Ch</text>
                                 <x>10</x>
                                 <width>80</width>
                               </widget>
                               <widget type="label" version="2.0.0">
-                                <name>ThresholdLabel_39</name>
+                                <name>ThresholdLabel_49</name>
                                 <text>Test Pattern Gap</text>
                                 <x>217</x>
                                 <width>140</width>
                               </widget>
                               <widget type="group" version="2.0.0">
-                                <name>Channel Threshold Group_30</name>
+                                <name>Channel Threshold Group_38</name>
                                 <macros>
                                   <CH>1</CH>
                                 </macros>
@@ -3223,35 +2583,35 @@ widget.setValue(data)]]></text>
                                 <height>46</height>
                                 <style>3</style>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Test Pulse Width_16</name>
+                                  <name>Test Pulse Width_24</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-SP</pv_name>
                                   <x>72</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_80</name>
+                                  <name>Ch1ThresholdGet_112</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-RBV</pv_name>
                                   <x>136</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="label" version="2.0.0">
-                                  <name>Ch1Label_35</name>
+                                  <name>Ch1Label_43</name>
                                   <text>${CH}</text>
                                   <x>9</x>
                                   <y>15</y>
                                   <width>10</width>
                                 </widget>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Ch1ThresholdSet_54</name>
+                                  <name>Ch1ThresholdSet_78</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-SP</pv_name>
                                   <x>217</x>
                                   <y>13</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_81</name>
+                                  <name>Ch1ThresholdGet_113</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-RBV</pv_name>
                                   <x>281</x>
                                   <y>13</y>
@@ -3259,7 +2619,7 @@ widget.setValue(data)]]></text>
                                 </widget>
                               </widget>
                               <widget type="group" version="2.0.0">
-                                <name>Channel Threshold Group_31</name>
+                                <name>Channel Threshold Group_39</name>
                                 <macros>
                                   <CH>2</CH>
                                 </macros>
@@ -3268,35 +2628,35 @@ widget.setValue(data)]]></text>
                                 <height>46</height>
                                 <style>3</style>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Test Pulse Width_17</name>
+                                  <name>Test Pulse Width_25</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-SP</pv_name>
                                   <x>72</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_84</name>
+                                  <name>Ch1ThresholdGet_114</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-RBV</pv_name>
                                   <x>136</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="label" version="2.0.0">
-                                  <name>Ch1Label_36</name>
+                                  <name>Ch1Label_44</name>
                                   <text>${CH}</text>
                                   <x>9</x>
                                   <y>15</y>
                                   <width>10</width>
                                 </widget>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Ch1ThresholdSet_57</name>
+                                  <name>Ch1ThresholdSet_79</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-SP</pv_name>
                                   <x>217</x>
                                   <y>13</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_85</name>
+                                  <name>Ch1ThresholdGet_115</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-RBV</pv_name>
                                   <x>281</x>
                                   <y>13</y>
@@ -3304,7 +2664,7 @@ widget.setValue(data)]]></text>
                                 </widget>
                               </widget>
                               <widget type="group" version="2.0.0">
-                                <name>Channel Threshold Group_32</name>
+                                <name>Channel Threshold Group_40</name>
                                 <macros>
                                   <CH>3</CH>
                                 </macros>
@@ -3313,35 +2673,35 @@ widget.setValue(data)]]></text>
                                 <height>46</height>
                                 <style>3</style>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Test Pulse Width_18</name>
+                                  <name>Test Pulse Width_26</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-SP</pv_name>
                                   <x>72</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_88</name>
+                                  <name>Ch1ThresholdGet_116</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-RBV</pv_name>
                                   <x>136</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="label" version="2.0.0">
-                                  <name>Ch1Label_37</name>
+                                  <name>Ch1Label_45</name>
                                   <text>${CH}</text>
                                   <x>9</x>
                                   <y>15</y>
                                   <width>10</width>
                                 </widget>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Ch1ThresholdSet_60</name>
+                                  <name>Ch1ThresholdSet_80</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-SP</pv_name>
                                   <x>217</x>
                                   <y>13</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_89</name>
+                                  <name>Ch1ThresholdGet_117</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-RBV</pv_name>
                                   <x>281</x>
                                   <y>13</y>
@@ -3349,7 +2709,7 @@ widget.setValue(data)]]></text>
                                 </widget>
                               </widget>
                               <widget type="group" version="2.0.0">
-                                <name>Channel Threshold Group_33</name>
+                                <name>Channel Threshold Group_41</name>
                                 <macros>
                                   <CH>4</CH>
                                 </macros>
@@ -3358,35 +2718,35 @@ widget.setValue(data)]]></text>
                                 <height>46</height>
                                 <style>3</style>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Test Pulse Width_19</name>
+                                  <name>Test Pulse Width_27</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-SP</pv_name>
                                   <x>72</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_92</name>
+                                  <name>Ch1ThresholdGet_118</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-W-RBV</pv_name>
                                   <x>136</x>
                                   <y>14</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="label" version="2.0.0">
-                                  <name>Ch1Label_38</name>
+                                  <name>Ch1Label_46</name>
                                   <text>${CH}</text>
                                   <x>9</x>
                                   <y>15</y>
                                   <width>10</width>
                                 </widget>
                                 <widget type="textentry" version="3.0.0">
-                                  <name>Ch1ThresholdSet_63</name>
+                                  <name>Ch1ThresholdSet_81</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-SP</pv_name>
                                   <x>217</x>
                                   <y>13</y>
                                   <width>56</width>
                                 </widget>
                                 <widget type="textupdate" version="2.0.0">
-                                  <name>Ch1ThresholdGet_93</name>
+                                  <name>Ch1ThresholdGet_119</name>
                                   <pv_name>ca://${PREFIX}${DEV}:CH${CH}-TST-GP-RBV</pv_name>
                                   <x>281</x>
                                   <y>13</y>
@@ -3838,7 +3198,6 @@ widget.setValue(data)]]></text>
                       <y>134</y>
                       <width>709</width>
                       <height>563</height>
-                      <active_tab>1</active_tab>
                     </widget>
                     <widget type="group" version="2.0.0">
                       <name>Sampling mode</name>
@@ -3920,8 +3279,8 @@ widget.setValue(data)]]></text>
                   </children>
                 </tab>
               </tabs>
-              <x>18</x>
-              <y>14</y>
+              <x>17</x>
+              <y>8</y>
               <width>740</width>
               <height>750</height>
               <active_tab>2</active_tab>
@@ -3936,21 +3295,6 @@ widget.setValue(data)]]></text>
       <active_tab>1</active_tab>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>Action Button_10</name>
-      <actions>
-        <action type="open_webpage">
-          <url>https://confluence.esss.lu.se/display/IS/Detector+Readout+ICS+Timing+Interface</url>
-          <description>Open Webpage</description>
-        </action>
-      </actions>
-      <text>Timing Help</text>
-      <x>689</x>
-      <y>9</y>
-      <width>120</width>
-      <height>61</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
-    <widget type="action_button" version="3.0.0">
       <name>Action Button_5</name>
       <actions>
         <action type="open_webpage">
@@ -3959,7 +3303,7 @@ widget.setValue(data)]]></text>
         </action>
       </actions>
       <text>Support Module Help</text>
-      <x>559</x>
+      <x>689</x>
       <y>9</y>
       <width>120</width>
       <height>61</height>
