@@ -2364,6 +2364,9 @@ widget.setValue(data)]]></text>
                               <actions>
                                 <action type="open_display">
                                   <file>offsetCalibrations.bob</file>
+                                  <macros>
+                                    <CH>1</CH>
+                                  </macros>
                                   <target>window</target>
                                   <description>Open Display</description>
                                 </action>
@@ -2380,6 +2383,9 @@ widget.setValue(data)]]></text>
                               <actions>
                                 <action type="open_display">
                                   <file>offsetCalibrations.bob</file>
+								  <macros>
+                                    <CH>2</CH>
+								  </macros>
                                   <target>window</target>
                                   <description>Open Display</description>
                                 </action>
@@ -2396,6 +2402,9 @@ widget.setValue(data)]]></text>
                               <actions>
                                 <action type="open_display">
                                   <file>offsetCalibrations.bob</file>
+								  <macros>
+                                    <CH>3</CH>
+								  </macros>
                                   <target>window</target>
                                   <description>Open Display</description>
                                 </action>
@@ -2412,6 +2421,9 @@ widget.setValue(data)]]></text>
                               <actions>
                                 <action type="open_display">
                                   <file>offsetCalibrations.bob</file>
+								  <macros>
+                                    <CH>4</CH>
+								  </macros>
                                   <target>window</target>
                                   <description>Open Display</description>
                                 </action>
