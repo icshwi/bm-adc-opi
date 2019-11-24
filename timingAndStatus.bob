@@ -117,7 +117,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>ChNrLabel_15</name>
                       <text>#</text>
-                      <x>8</x>
+                      <x>19</x>
                       <y>22</y>
                       <width>40</width>
                       <height>30</height>
@@ -126,7 +126,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>ActiveLabel_1</name>
                       <text>Active</text>
-                      <x>58</x>
+                      <x>69</x>
                       <y>22</y>
                       <width>60</width>
                       <height>30</height>
@@ -135,7 +135,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>RangeLabel_1</name>
                       <text>Range</text>
-                      <x>338</x>
+                      <x>349</x>
                       <y>22</y>
                       <width>88</width>
                       <height>30</height>
@@ -144,7 +144,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>RangeLabel_2</name>
                       <text>Impedance</text>
-                      <x>178</x>
+                      <x>189</x>
                       <y>22</y>
                       <width>132</width>
                       <height>30</height>
@@ -153,7 +153,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>ActiveLabel_2</name>
                       <text>Gnd Input</text>
-                      <x>118</x>
+                      <x>127</x>
                       <y>22</y>
                       <width>90</width>
                       <height>30</height>
@@ -162,7 +162,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>OffsetLabel_1</name>
                       <text>Offset</text>
-                      <x>683</x>
+                      <x>694</x>
                       <y>22</y>
                       <width>92</width>
                       <height>30</height>
@@ -171,7 +171,7 @@ else:
                     <widget type="label" version="2.0.0">
                       <name>RangeLabel_4</name>
                       <text>Readback</text>
-                      <x>478</x>
+                      <x>489</x>
                       <y>22</y>
                       <width>122</width>
                       <height>30</height>
@@ -183,10 +183,10 @@ else:
                       <macros>
                         <CH>1</CH>
                       </macros>
-                      <x>9</x>
+                      <x>19</x>
                       <y>65</y>
-                      <width>800</width>
-                      <height>60</height>
+                      <width>820</width>
+                      <height>40</height>
                     </widget>
                     <widget type="embedded" version="2.0.0">
                       <name>Embedded Display_1</name>
@@ -194,10 +194,10 @@ else:
                       <macros>
                         <CH>2</CH>
                       </macros>
-                      <x>9</x>
+                      <x>19</x>
                       <y>145</y>
-                      <width>800</width>
-                      <height>60</height>
+                      <width>820</width>
+                      <height>40</height>
                     </widget>
                     <widget type="embedded" version="2.0.0">
                       <name>Embedded Display_2</name>
@@ -205,10 +205,10 @@ else:
                       <macros>
                         <CH>3</CH>
                       </macros>
-                      <x>9</x>
+                      <x>19</x>
                       <y>225</y>
-                      <width>800</width>
-                      <height>60</height>
+                      <width>820</width>
+                      <height>40</height>
                     </widget>
                     <widget type="embedded" version="2.0.0">
                       <name>Embedded Display_3</name>
@@ -216,10 +216,10 @@ else:
                       <macros>
                         <CH>4</CH>
                       </macros>
-                      <x>9</x>
+                      <x>19</x>
                       <y>305</y>
-                      <width>800</width>
-                      <height>60</height>
+                      <width>820</width>
+                      <height>40</height>
                     </widget>
                   </widget>
                   <widget type="group" version="2.0.0">
@@ -1223,6 +1223,10 @@ widget.setValue(data)]]></text>
     <y>70</y>
     <width>980</width>
     <height>780</height>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Timeout description_6</name>
