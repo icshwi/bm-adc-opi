@@ -45,7 +45,7 @@
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Ch1Gain_4</name>
-    <pv_name>ca://${PREFIX}${DEV}:RANGE-CH1-SP</pv_name>
+    <pv_name>ca://${PREFIX}${DEV}:RANGE-CH$(CH)-SP</pv_name>
     <x>310</x>
     <y>10</y>
     <width>140</width>
