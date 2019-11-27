@@ -35,17 +35,19 @@
     <name>Label</name>
     <class>TITLE</class>
     <text>Main screen</text>
-    <x>20</x>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
     <width>440</width>
     <height>50</height>
-    <font>
+    <font use_class="true">
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
       </font>
     </font>
-    <foreground_color>
-      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
       </color>
     </foreground_color>
+    <transparent use_class="true">true</transparent>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
@@ -132,5 +134,25 @@
       <font family="Liberation Sans" style="BOLD" size="18.0">
       </font>
     </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <class>SUBTITLE</class>
+    <text>Beam Monitor Readout</text>
+    <x>730</x>
+    <y>20</y>
+    <width>270</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>

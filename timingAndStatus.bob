@@ -90,7 +90,7 @@ else:
     <name>Action Button_5</name>
     <actions>
       <action type="open_webpage">
-        <url>https://confluence.esss.lu.se/display/IS/Detector+Readout+Support+Module</url>
+        <url>https://confluence.esss.lu.se/display/IS/Detector+Readout+Demonstrator+GUI</url>
         <description>Open Webpage</description>
       </action>
     </actions>
