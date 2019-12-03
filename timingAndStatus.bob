@@ -57,12 +57,19 @@ else:
     <name>NetworkTitle</name>
     <class>TITLE</class>
     <text>$(PREFIX)$(DEV)</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
     <width>900</width>
     <height>50</height>
-    <font>
+    <font use_class="true">
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
       </font>
     </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
   </widget>
@@ -90,7 +97,7 @@ else:
     <name>Action Button_5</name>
     <actions>
       <action type="open_webpage">
-        <url>https://confluence.esss.lu.se/display/IS/Detector+Readout+Demonstrator+GUI</url>
+        <url>https://confluence.esss.lu.se/display/IS/BM-ADC+GUI</url>
         <description>Open Webpage</description>
       </action>
     </actions>
@@ -181,30 +188,56 @@ else:
     <widget type="label" version="2.0.0">
       <name>ThresholdLabel_25</name>
       <text>Rising Hold</text>
-      <x>50</x>
+      <x>52</x>
       <y>57</y>
       <width>80</width>
+      <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
       <name>ThresholdLabel_28</name>
       <text>Falling Hold</text>
-      <x>48</x>
-      <y>85</y>
-      <width>132</width>
+      <x>40</x>
+      <y>87</y>
+      <width>92</width>
+      <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
       <name>ThresholdLabel_33</name>
       <text>Samples Before</text>
-      <x>40</x>
       <y>117</y>
       <width>132</width>
+      <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
       <name>ThresholdLabel_34</name>
       <text>Samples After</text>
-      <x>40</x>
       <y>147</y>
       <width>132</width>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Action Button_21</name>
+      <pv_name>$(PREFIX)${DEV}:ACQ-MODE-SP</pv_name>
+      <x>150</x>
+      <y>17</y>
+      <width>237</width>
+      <height>30</height>
+      <actions>
+      </actions>
+      <tooltip>$(actions)</tooltip>
+      <items>
+        <item>Continuous</item>
+        <item>Triggered</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Timeout description_9</name>
+      <text>Triggering</text>
+      <x>40</x>
+      <y>23</y>
+      <width>90</width>
+      <horizontal_alignment>2</horizontal_alignment>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -345,14 +378,14 @@ else:
     <y>65</y>
     <width>173</width>
     <height>47</height>
-    <off_label>Disabled</off_label>
+    <off_label>Enabled</off_label>
     <off_color>
-      <color name="LED-RED-ON" red="255" green="60" blue="46">
+      <color name="On" red="0" green="255" blue="0">
       </color>
     </off_color>
-    <on_label>Enabled</on_label>
+    <on_label>Disabled</on_label>
     <on_color>
-      <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+      <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </on_color>
   </widget>

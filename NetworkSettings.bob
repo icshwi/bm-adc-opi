@@ -191,29 +191,6 @@
         <width>129</width>
       </widget>
     </widget>
-    <widget type="choice" version="2.0.0">
-      <name>Action Button_21</name>
-      <pv_name>$(PREFIX)${DEV}:ACQ-MODE-SP</pv_name>
-      <x>223</x>
-      <y>242</y>
-      <width>237</width>
-      <height>30</height>
-      <actions>
-      </actions>
-      <tooltip>$(actions)</tooltip>
-      <items>
-        <item>Continuous</item>
-        <item>Triggered</item>
-      </items>
-      <items_from_pv>false</items_from_pv>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Timeout description_9</name>
-      <text>Packet Formation</text>
-      <x>95</x>
-      <y>252</y>
-      <width>150</width>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>Label_23</name>
       <text>Ch</text>
